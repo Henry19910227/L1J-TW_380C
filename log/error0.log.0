@@ -1,0 +1,63 @@
+六月 30, 2024 12:44:54 下午 l1j.server.server.datatables.AuctionBoardTable <init>
+嚴重: Communications link failure
+
+The last packet successfully received from the server was 60,309 milliseconds ago.  The last packet sent successfully to the server was 118 milliseconds ago.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 60,309 milliseconds ago.  The last packet sent successfully to the server was 118 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3082)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2968)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3516)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2273)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at l1j.server.server.datatables.AuctionBoardTable.<init>(AuctionBoardTable.java:55)
+	at l1j.server.server.AuctionTimeController.checkAuctionDeadline(AuctionTimeController.java:68)
+	at l1j.server.server.AuctionTimeController.run(AuctionTimeController.java:54)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2529)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2979)
+	... 14 more
+
+六月 30, 2024 12:53:31 下午 l1j.server.server.datatables.RaceTicketTable oldTicketDelete
+嚴重: Communications link failure
+
+The last packet successfully received from the server was 1,085,544 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,085,544 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at sun.reflect.GeneratedConstructorAccessor31.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3082)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2968)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3516)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1362)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at l1j.server.server.datatables.RaceTicketTable.oldTicketDelete(RaceTicketTable.java:146)
+	at l1j.server.server.model.game.L1BugBearRace$RaceTimer.run(L1BugBearRace.java:295)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2529)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2979)
+	... 12 more
+

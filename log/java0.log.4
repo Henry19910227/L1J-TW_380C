@@ -1,0 +1,53 @@
+六月 30, 2024 2:50:40 上午 l1j.server.Config load
+資訊: loading gameserver config
+六月 30, 2024 2:50:41 上午 l1j.server.server.IdFactory loadState
+資訊: 目前的物件ID: 268435456
+六月 30, 2024 2:50:45 上午 l1j.server.server.datatables.NpcTable buildFamily
+嚴重: Table '380c.npc' doesn't exist
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table '380c.npc' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.Util.getInstance(Util.java:382)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3593)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3525)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2273)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at l1j.server.server.datatables.NpcTable.buildFamily(NpcTable.java:213)
+	at l1j.server.server.datatables.NpcTable.<clinit>(NpcTable.java:43)
+	at l1j.server.server.GameServer.initialize(GameServer.java:245)
+	at l1j.server.Server.main(Server.java:70)
+
+六月 30, 2024 2:50:45 上午 l1j.server.server.datatables.NpcTable loadNpcData
+嚴重: Table '380c.npc' doesn't exist
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table '380c.npc' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:407)
+	at com.mysql.jdbc.Util.getInstance(Util.java:382)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3593)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3525)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1986)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2140)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2626)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2111)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2273)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at l1j.server.server.datatables.NpcTable.loadNpcData(NpcTable.java:87)
+	at l1j.server.server.datatables.NpcTable.<init>(NpcTable.java:57)
+	at l1j.server.server.datatables.NpcTable.getInstance(NpcTable.java:47)
+	at l1j.server.server.GameServer.initialize(GameServer.java:245)
+	at l1j.server.Server.main(Server.java:70)
+
+六月 30, 2024 2:50:46 上午 l1j.server.server.datatables.SpawnTable fillSpawnTable
+警告: mob data for id:45005 missing in npc table
