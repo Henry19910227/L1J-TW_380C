@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+  380c-mysql:
+    image: mysql:5.6.25
+    container_name: 380c-mysql
+    volumes:
+      - "./volumes/mysql:/docker-entrypoint-initdb.d"
+    ports:
+      - "3306:3306"
+    networks:
+      - 380c-network
+    environment:
+      - MYSQL_DATABASE=380c
+      - MYSQL_ROOT_PASSWORD=aaaa8027
+      - MYSQL_USER=henry
+      - MYSQL_PASSWORD=Henry747
+networks:
+  380c-network:
+    driver: bridge
