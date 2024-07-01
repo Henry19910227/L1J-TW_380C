@@ -15,11 +15,13 @@
 package l1j.server.server.clientpackets;
 
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import l1j.server.Config;
 import l1j.server.server.ClientThread;
+import l1j.server.server.utils.PrintUtil;
 
 public abstract class ClientBasePacket {
 	private static Logger _log = Logger.getLogger(ClientBasePacket.class.getName());
@@ -31,6 +33,7 @@ public abstract class ClientBasePacket {
 	private int _off;
 
 	public ClientBasePacket(byte abyte0[]) {
+		PrintUtil.println(getType() + "  " + Arrays.toString(abyte0));
 		_log.finest("type=" + getType() + ", len=" + abyte0.length);
 		_decrypt = abyte0;
 		_off = 1;
