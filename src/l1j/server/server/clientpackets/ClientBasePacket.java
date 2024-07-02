@@ -42,6 +42,20 @@ public abstract class ClientBasePacket {
 	public ClientBasePacket(ByteBuffer bytebuffer, ClientThread clientthread) {
 	}
 
+	/**
+	 * 		   小端 byte 轉 int
+	 * 		   此段可改寫成以下形式
+	 *         int i = _decrypt[1] & 0xff;
+	 *         i += (_decrypt[2] & 0xff) << 8 ;
+	 *         i += (_decrypt[3] & 0xff) << 16;
+	 *         i += (_decrypt[4] & 0xff) << 24;
+	 *
+	 * 		   byte & 0xff 使 (-128 ~ 127) 的有符號二進位數轉為無符號二進位數 (0 ~ 255)
+	 * 		   00000000 ~ 01111111 (0 ~ 127)
+	 * 		   10000000 ~ 11111111 (-128 ~ -1) 二的補數 127 ~ 255
+	 * 		   10000000 & 0xff = 01111111 = 127
+	 * 		   11111111 & 0xff = 11111111 = 256
+	 * */
 	public int readD() {
 		int i = _decrypt[_off++] & 0xff;
 		i |= _decrypt[_off++] << 8 & 0xff00;

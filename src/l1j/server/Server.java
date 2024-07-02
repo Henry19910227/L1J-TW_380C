@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 
 import l1j.server.Config;
 import l1j.server.server.GameServer;
+import l1j.server.server.model.L1World;
 import l1j.server.telnet.TelnetServer;
 
 /**
@@ -68,6 +69,7 @@ public class Server {
 		L1DatabaseFactory.getInstance();
 
 		GameServer.getInstance().initialize();
+		System.out.println(L1World.getInstance().findObject(268543132));
 		if (Config.TELNET_SERVER) {
 			TelnetServer.getInstance().start();
 		}
