@@ -19,12 +19,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import l1j.server.Config;
 import l1j.server.server.GameServer;
+import l1j.server.server.model.Instance.L1SummonInstance;
+import l1j.server.server.model.L1Object;
 import l1j.server.server.model.L1World;
 import l1j.server.telnet.TelnetServer;
 
@@ -69,7 +72,7 @@ public class Server {
 		L1DatabaseFactory.getInstance();
 
 		GameServer.getInstance().initialize();
-		System.out.println(L1World.getInstance().findObject(268543132));
+
 		if (Config.TELNET_SERVER) {
 			TelnetServer.getInstance().start();
 		}

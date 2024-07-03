@@ -137,7 +137,7 @@ public class L1Inventory extends L1Object {
 		return OK;
 	}
 
-	// 新しいアイテムの格納
+	// 儲存新物品
 	public synchronized L1ItemInstance storeItem(int id, int count) {
 		if (count <= 0) {
 			return null;
@@ -150,7 +150,7 @@ public class L1Inventory extends L1Object {
 		if (id == 40312) {
 			L1ItemInstance item = new L1ItemInstance(temp, count);
 
-			if (findKeyId(id) == null) { // 新しく生成する必要がある場合のみIDの発行とL1Worldへの登録を行う
+			if (findKeyId(id) == null) { // 只有在需要產生新 ID 時才頒發 ID 並將其註冊到 L1World。
 				item.setId(IdFactory.getInstance().nextId());
 				L1World.getInstance().storeObject(item);
 			}
@@ -160,7 +160,7 @@ public class L1Inventory extends L1Object {
 		else if (temp.isStackable()) {
 			L1ItemInstance item = new L1ItemInstance(temp, count);
 
-			if (findItemId(id) == null) { // 新しく生成する必要がある場合のみIDの発行とL1Worldへの登録を行う
+			if (findItemId(id) == null) { // 只有在需要產生新 ID 時才頒發 ID 並將其註冊到 L1World。
 				item.setId(IdFactory.getInstance().nextId());
 				L1World.getInstance().storeObject(item);
 			}
@@ -168,7 +168,7 @@ public class L1Inventory extends L1Object {
 			return storeItem(item);
 		}
 
-		// スタックできないアイテムの場合
+		// 對於無法堆疊的物品
 		L1ItemInstance result = null;
 		for (int i = 0; i < count; i++) {
 			L1ItemInstance item = new L1ItemInstance(temp, 1);
@@ -177,7 +177,7 @@ public class L1Inventory extends L1Object {
 			storeItem(item);
 			result = item;
 		}
-		// 最後に作ったアイテムを返す。配列を戻すようにメソッド定義を変更したほうが良いかもしれない。
+		// 返回最後創建的項目。更改方法定義以傳回數組可能會更好。
 		return result;
 	}
 
